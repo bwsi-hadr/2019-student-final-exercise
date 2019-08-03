@@ -1,6 +1,14 @@
 # 2019-student-final-exercise
 
-Repository for student created code in support of the final 2019 BWSI exercise.
+Repository for student created code in support of the final 2019 BWSI exercise. The class was organized into five teams of three students. The teams were inspired by the FEMA Community Lifelines, of Administration, Logistics, Operations, Planning, & Public Relations.
+
+Code was writen and executed using [Google Colaboratory](https://colab.research.google.com), a free Jupyter notebook environment that requires no setup and runs entirely in the cloud.
+
+The final exercise occured on Sunday, August 3 2019 in Lobdell at the [MIT Stratton Student Center](https://whereis.mit.edu/?go=W20).
+
+## Naming Convention
+
+Each filename should have the responsible's team name at the beginning of the filename followed by an underscore. For example, the Adminstration team's files should start with `Admin_`.
 
 ## Distribution Statement
 
