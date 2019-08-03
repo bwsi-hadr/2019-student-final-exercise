@@ -1,0 +1,120 @@
+!export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+!sudo mkdir -p /etc/pki/tls/certs
+!sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+try:
+  import rasterio
+  import rasterio.plot
+  import rasterio.merge 
+  import rasterio.mask
+except:
+  !pip install rasterio
+  import rasterio
+  import rasterio.plot
+  import rasterio.merge
+  import rasterio.mask
+  
+try:
+  import rasterstats as rs
+except:
+  !pip install rasterstats  
+  import rasterstats as rs
+  
+try:
+  import pyproj
+except:
+  !pip install pyproj
+  import pyproj
+  
+import networkx as nx
+try:
+  import osmnx as ox
+except:
+  # osmnx depends on the system package libspatialindex
+  !apt install libspatialindex-dev
+  !pip install osmnx
+  import osmnx as ox
+
+try: 
+  import geopandas as gpd
+except: 
+  !pip install geopandas 
+  import geopandas as gpd
+  
+try:
+  import contextily as ctx 
+except:
+  # install dependencies for contextily
+  !apt install libproj-dev proj-data proj-bin
+  !apt install libgeos-dev
+  !pip install cython
+  !pip install cartopy
+  # install contextily
+  !pip install contextily==1.0rc1 --no-use-pep517 --no-cache-dir
+  import contextily as ctx
+  
+import fiona
+from shapely.geometry import Point, LineString, Polygon
+  
+import gdal
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pathlib
+from google.colab import drive
+drive.mount('/content/drive')
+%cd /content/drive/'My Drive'/BWSI-Remote-Sensing/'Final_exercise'
+
+
+!ls game_grid_export
+flooding = gpd.read_file('game_grid_export/flooding.shp')
+hospitals = gpd.read_file('game_grid_export/facilities/hospitals.shp')
+game_grid = gpd.read_file('game_grid_export/game_grid_all_stats.shp')
+
+new_geo = gpd.sjoin(game_grid, flooding.to_crs(game_grid.crs), how = 'right', op = 'intersects')
+
+print(new_geo)
+
+def calc_shortest_path(source_node, target_node, graph):
+  new_tuple_list = []  
+    
+  i=source_node
+  while i < target_node:
+    print(i)
+    value = tuple_list[i-source_node]
+    new_tuple_list.append((i, value, transport_score_dict_list[i-source_node])
+    G.add_edges_from(new_tuple_list)
+    i+=1
+    bruh = calc_shortest_path(source_node, target_node, G)
+    game_grid.iloc[bruh].plot(ax=base, color = 'red')
+    p = nx.shortest_path(graph, source = source_node, target= target_node, method = "dijkstra", weight='weight')
+    shortest_tuple_list = []
+    for i in range((len(p)) - 1):
+      shortest_tuple_list.append((p[i], p[i+1]))  
+  return p
+
+
+    
+fig = plt.figure(figsize=[10, 10])
+ax = fig.add_subplot(1,1,1)
+
+for item in new_geo['geometry']:
+  if item in game_grid['geometry']:
+      value = game_grid['geometry'].index(item)
+      game_grid.at['Transporta', value] = 2
+
+weight_list = game_grid['Transporta']
+transport_score_list = 1/(game_grid['Transporta'])
+transport_score_dict_list = [{'weight':x} for x in transport_score_list]
+
+tuple_list = []
+for index,row in game_grid.iterrows():
+  neighbors = game_grid.loc[game_grid.geometry.touches(row['geometry'])].index.tolist()
+  for neighbor in neighbors:
+    temp_tuple = (index, neighbor)
+    tuple_list.append(temp_tuple)
+        
+print(transport_score_dict_list)
+print((tuple_list))
+
+G = nx.MultiDiGraph()  # or DiGraph, MultiGraph, MultiDiGraph, etc
+    
