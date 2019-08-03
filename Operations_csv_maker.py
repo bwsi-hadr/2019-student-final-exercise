@@ -13,6 +13,7 @@ local_eocs = gpd.read_file('game_grid_export/facilities/local_eocs.shp')
 state_eocs = gpd.read_file('game_grid_export/facilities/state_eocs.shp') 
 cell_towers = gpd.read_file('game_grid_export/facilities/cell_towers.shp') 
 
+# script will make 'resources.csv' when run with columns ['objectid', 'type', 'food_water', 'medicine', 'fuel']
 with open('resources.csv', 'w') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
