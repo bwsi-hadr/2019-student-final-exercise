@@ -1,12 +1,12 @@
 # 2019-student-final-exercise
 
-Repository for student created code in support of the final 2019 BWSI remote sensing exercise. The exercise was a three hour tabletop simulation of a hurricane making landfall along the southern coast of Massachusetts and Rhode Island. Each turn simulated six hours of the response and multiple days before and after the hurricane made landfall were simulated. 
+Repository for student created code in support of the final 2019 BWSI remote sensing exercise. The class was organized into five teams of three students. The teams were inspired by the FEMA Community Lifelines, of Administration, Logistics, Operations, Planning, & Public Relations. 
 
-The class was organized into five teams of three students. The teams were inspired by the FEMA Community Lifelines, of Administration, Logistics, Operations, Planning, & Public Relations. 
-
+The exercise was a three hour tabletop simulation of a hurricane making landfall along the southern coast of Massachusetts and Rhode Island. Each turn lasted 10-15 minutes and simulated six hours of the response. Multiple days before and after the hurricane made landfall were simulated. A "press briefing" was given to the audience at the end of each simulated day. 
+ 
 Code was writen and executed using [Google Colaboratory](https://colab.research.google.com), a free Jupyter notebook environment that requires no setup and runs entirely in the cloud.
 
-The final exercise occured on Sunday, August 3 2019 in Lobdell at the [MIT Stratton Student Center](https://whereis.mit.edu/?go=W20).
+The final exercise occured on Sunday, August 3 2019 in Lobdell on the east balcony at the [MIT Stratton Student Center](https://whereis.mit.edu/?go=W20).
 
 ## Naming Convention
 
