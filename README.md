@@ -6,7 +6,7 @@ The exercise was a three hour tabletop simulation of a hurricane making landfall
  
 Code was writen and executed using [Google Colaboratory](https://colab.research.google.com), a free Jupyter notebook environment that requires no setup and runs entirely in the cloud.
 
-The final exercise occured on Sunday, August 3 2019 in Lobdell on the east balcony at the [MIT Stratton Student Center](https://whereis.mit.edu/?go=W20).
+The final exercise occured on Sunday, August 4 2019 in Lobdell on the east balcony at the [MIT Stratton Student Center](https://whereis.mit.edu/?go=W20).
 
 ## Naming Convention
 
